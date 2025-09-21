@@ -1,0 +1,16 @@
+seed: 1337
+out_dir: runs/tiny_char
+data:
+  train_file: data/tinyshakespeare.txt
+model:
+  d_model: 128
+  n_layer: 4
+  n_head: 4
+  ctx_len: 256
+  dropout: 0.1
+train:
+  batch_size: 64
+  lr: 3e-4
+  epochs: 5
+  grad_clip: 1.0
+  log_every: 100

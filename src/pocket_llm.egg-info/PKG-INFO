@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: pocket-llm
+Version: 0.1.0
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pyyaml
+Provides-Extra: train
+Requires-Dist: torch; extra == "train"
+Dynamic: license-file

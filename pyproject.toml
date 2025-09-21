@@ -1,0 +1,7 @@
+[project]
+name = "pocket-llm"
+version = "0.1.0"
+dependencies = ["numpy", "pyyaml"]   # remove "torch" here
+
+[project.optional-dependencies]
+train = ["torch"]                    # install later with '.[train]'
