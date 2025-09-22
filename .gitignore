@@ -1,5 +1,3 @@
-__pycache__/
+.venv
+.venv312
 runs/
-data/
-.ipynb_checkpoints/
-.ckpt
