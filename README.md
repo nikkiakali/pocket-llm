@@ -15,6 +15,13 @@ Built for experimentation, understanding core model internals, and pushing small
 
 ---
 
+## Samples
+- BPE (small dev): [`samples/small_bpe_ROMEO.txt`](samples/small_bpe_ROMEO.txt)
+- BPE (tiny):      [`samples/tiny_bpe_ROMEO.txt`](samples/tiny_bpe_ROMEO.txt)
+- Char (micro):    [`samples/micro_char_ROMEO.txt`](samples/micro_char_ROMEO.txt)
+
+---
+
 ## 🗺 Roadmap & Future Work
 - Add Byte Pair Encoding (BPE) or similar tokenization  
 - Mixed precision / Automatic Mixed Precision (AMP) for faster training  
