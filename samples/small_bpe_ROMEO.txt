@@ -1,0 +1,14 @@
+Using device: cpu
+BPE model detected.
+Prompt: "ROMEO:"
+
+--- Output ---
+ROMEO:
+Taken and which mary I shall, curng that do a take
+As it for the prove assad: in the war
+The hunder in him propers is toot bese; to caway to a
+pity's country you bran, and if we have the has lip of
+One made the sworkd of them; of him a the starmnth
+Than him marounds for's godrare me brown my it,
+What
+------------

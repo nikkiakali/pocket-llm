@@ -1,0 +1,16 @@
+Using device: cpu
+Char-level model detected.
+Prompt: "ROMEO:"
+
+--- Output ---
+ROMEO:
+Well discont a for my shall they, sire him:
+He first your senaturtion in of have man
+Whaves as when and manst a fes a batter it, we the exirst to hen,
+My grat masus for the eat prowneser
+you uporth, I madize wifil, me!
+
+CORIWhis yet the frepines, thing inly,
+Wher my erearting the Swould chour.
+Trok
+------------

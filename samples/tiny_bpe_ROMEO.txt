@@ -1,0 +1,26 @@
+Using device: cpu
+BPE model detected.
+Prompt: "ROMEO:"
+
+--- Output ---
+ROMEO: come of the gods
+Which prevance and backs and I am in the
+stires bad of the instant, the crimins of Rome.
+
+SICINIUS:
+Come, and ladies many tribunes in this his?
+
+BRUTUS:
+I do not cannot delivers!
+
+CORIOLANUS:
+Say, 'tis to speak your house's worse?
+
+CORIOLANUS:
+Nay, then a little to pier your city thing.
+Pray you are no worn to be good citizen forth the other,
+To the very spoil of Gree o' the war o' the people's your ground
+sea monst of wars. A doing the city of mun
+I do you must say hereafter of Rome,
+S
+------------
