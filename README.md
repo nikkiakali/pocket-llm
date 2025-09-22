@@ -1,5 +1,7 @@
 # Pocket-LLM 🪶
 
+[![CI](https://github.com/nikkiakali/pocket-llm/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/nikkiakali/pocket-llm/actions/workflows/ci.yml)
+
 Tiny GPT-style LLM from scratch: tokenizer, transformer, training & inference.  
 Built for experimentation, understanding core model internals, and pushing small models to be usable in lightweight settings.
 
