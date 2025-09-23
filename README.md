@@ -7,46 +7,40 @@ Built for experimentation, understanding core model internals, and pushing small
 
 ---
 
-## 🔍 What’s Working Now
-- Custom tokenizer & text preprocessing  
-- Transformer blocks implementation (self-attention, MLP, etc.)  
-- Training loop + evaluation on toy datasets (e.g. Tiny Shakespeare)  
-- Inference: generate text given prompt + checkpoint  
-
----
-
-## Samples
-- BPE (small dev): [`samples/small_bpe_ROMEO.txt`](samples/small_bpe_ROMEO.txt)
-- BPE (tiny):      [`samples/tiny_bpe_ROMEO.txt`](samples/tiny_bpe_ROMEO.txt)
-- Char (micro):    [`samples/micro_char_ROMEO.txt`](samples/micro_char_ROMEO.txt)
-
----
-
-## 🗺 Roadmap & Future Work
-- Add Byte Pair Encoding (BPE) or similar tokenization  
-- Mixed precision / Automatic Mixed Precision (AMP) for faster training  
-- Fine-tuning support (LoRA or similar)  
-- Web demo / interactive interface  
-- Ablation studies: vary context length, number of layers/heads, dropout  
-- Better tooling: logging, visualization of training curves  
+## 📖 Docs & Samples
+- **Model Card:** [MODEL_CARD.md](MODEL_CARD.md)  
+- **Experiments/Results:** [EXPERIMENTS.md](EXPERIMENTS.md)  
+- **Samples (view on GitHub):**
+  - BPE (small dev): [`samples/small_bpe_ROMEO.txt`](samples/small_bpe_ROMEO.txt)
+  - BPE (tiny):      [`samples/tiny_bpe_ROMEO.txt`](samples/tiny_bpe_ROMEO.txt)
+  - Char (micro):    [`samples/micro_char_ROMEO.txt`](samples/micro_char_ROMEO.txt)
 
 ---
 
 ## 🛠 Tech Stack & Design
 
 - **Language**: Python  
-- **Core Libraries**: PyTorch (or your DL framework), NumPy, etc.  
-- **Structure**:  
-  - `tokenizer/` or `src/tokenizer` → tokenization logic  
-  - `transformer/` or `src/model` → model architecture  
-  - `scripts/` or `notebooks/` → training / data prep / experiments  
-  - `configs/` → configuration files for experiments/datasets  
+- **Core Libraries**: PyTorch 2.2.x (CPU), NumPy (<2), PyYAML, regex 
+- **Directory Layout**:  
+```bash
+src/pocketllm/   # model, tokenizers, training & inference CLIs
+├── bigram.py
+├── bpe_tokenizer.py
+├── infer.py
+├── model.py
+├── tokenizer.py
+├── train.py             # char-level trainer
+└── train_bpe_gpt.py     # BPE trainer
+configs/         # YAML configs (small_bpe, tiny_bpe, tiny_char)
+scripts/         # dataset download, helpers
+samples/         # generated text (human-readable outputs)
+tests/           # tiny unit tests (smoke, tokenizer, sampling)
+```
+ 
 
 ---
 
-## 🚀 Quick Start (Early Demo)
-
-> 💡 *This is experimental — expect rough edges*
+## 🚀 Quick Start (CPU Friendly)
 
 ```bash
 # Clone the repo
@@ -59,8 +53,27 @@ pip install -r requirements.txt
 # Prepare data (e.g. download tiny Shakespeare)
 bash scripts/download_tinyshakespeare.sh
 
-# Train model with default config
+# Train (fast dev BPE on CPU)
+python -m pocketllm.train_bpe_gpt --config configs/small_bpe.yaml
+
+# Train (char micro on CPU)
 python -m pocketllm.train --config configs/tiny_char.yaml
 
+# Train (tiny BPE — better quality; use GPU if available)
+python -m pocketllm.train_bpe_gpt --config configs/tiny_bpe.yaml
+```
+
 # Inference
-python -m pocketllm.infer --ckpt runs/tiny_char/ckpt_best.pt --prompt "To be, or not to be…"
+```bash
+# BPE (small dev)
+python -m pocketllm.infer --ckpt runs/small_bpe/ckpt_best.pt --prompt "ROMEO:"
+
+# Char (micro)
+python -m pocketllm.infer --ckpt runs/micro_char/ckpt_best.pt --prompt "ROMEO:"
+```
+
+## Tests
+```bash
+python -m pip install -e .
+python -m pytest -q tests
+```
