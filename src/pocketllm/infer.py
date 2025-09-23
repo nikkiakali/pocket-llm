@@ -10,6 +10,17 @@ import argparse
 from pocketllm.model import GPT
 from pocketllm.bpe_tokenizer import BPETokenizer  # alias of SimpleBPE in your repo
 
+__all__ = ["top_k_sampling", "main"]
+
+def top_k_sampling(logits: torch.Tensor, k: int) -> int:
+    """Sample a token id from the top-k logits (batch size = 1)."""
+    k = max(1, min(int(k), logits.shape[-1]))
+    top_vals, top_idx = torch.topk(logits, k, dim=-1)          # [1, k]
+    probs = F.softmax(top_vals, dim=-1)                         # [1, k]
+    sample = torch.multinomial(probs, num_samples=1)            # [1, 1]
+    next_id = top_idx.gather(-1, sample).item()                 # int
+    return next_id
+
 def sample_next(logits, temperature: float = 1.0, top_k: int = 0) -> int:
     """Return next token id sampled from logits[1, V]."""
     logits = logits / max(temperature, 1e-8)
