@@ -1,4 +1,4 @@
-# Pocket-LLM 🪶
+# Pocket-LLM
 
 [![CI](https://github.com/nikkiakali/pocket-llm/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/nikkiakali/pocket-llm/actions/workflows/ci.yml)
 
@@ -7,7 +7,7 @@ Built for experimentation, understanding core model internals, and pushing small
 
 ---
 
-## 📖 Docs & Samples
+## Docs & Samples
 - **Model Card:** [MODEL_CARD.md](MODEL_CARD.md)  
 - **Experiments/Results:** [EXPERIMENTS.md](EXPERIMENTS.md)  
 - **Samples (view on GitHub):**
@@ -17,7 +17,7 @@ Built for experimentation, understanding core model internals, and pushing small
 
 ---
 
-## 🛠 Tech Stack & Design
+## Tech Stack & Design
 
 - **Language**: Python  
 - **Core Libraries**: PyTorch 2.2.x (CPU), NumPy (<2), PyYAML, regex 
@@ -40,7 +40,7 @@ tests/           # tiny unit tests (smoke, tokenizer, sampling)
 
 ---
 
-## 🚀 Quick Start (CPU Friendly)
+## Quick Start (CPU Friendly)
 
 ```bash
 # Clone the repo
